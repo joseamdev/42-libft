@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:37:25 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 13:07:17 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/24 20:20:44 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static size_t	count_digits(int n)
 	size_t	count;
 
 	count = 1;
-	while (n > 9 || n < -9)
+	while (n < -9 || n > 9)
 	{
 		n /= 10;
 		count++;

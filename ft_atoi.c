@@ -6,15 +6,15 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:48:01 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/23 14:23:33 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/24 20:15:04 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	sign;
+	int		i;
+	long	result;
+	int		sign;
 
 	result = 0;
 	sign = 1;
@@ -33,5 +33,5 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	result *= sign;
-	return (result);
+	return ((int)result);
 }

@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:50:01 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/23 17:41:35 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/24 20:17:44 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 
 	s_len = ft_strlen(s);
+	if (start >= s_len)
+		start = s_len;
 	if (s_len - start < len)
 		len = s_len - start;
 	ptr = malloc(len + 1);
