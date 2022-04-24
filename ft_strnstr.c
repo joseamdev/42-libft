@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	while (haystack[i] && i < len)
 	{
-		if (is_substr(haystack, needle, len))
+		if (is_substr(&haystack[i], needle, len - i))
 			return ((char *)&haystack[i]);
 		i++;
 	}
@@ -41,11 +41,7 @@ static int	is_substr(const char *str, const char *substr, size_t len)
 	size_t	pos;
 
 	pos = 0;
-	while (pos < len && str[pos] && str[pos] == substr[pos])
-	{
-		if (!substr[pos + 1])
-			return (1);
+	while (pos < len && str[pos] && substr[pos] && str[pos] == substr[pos])
 		pos++;
-	}
-	return (0);
+	return (!substr[pos]);
 }

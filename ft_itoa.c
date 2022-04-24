@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	count_digits(int n);
+static size_t	number_len(int n);
 static int		ft_abs(int n);
 
 char	*ft_itoa(int n)
@@ -21,35 +21,38 @@ char	*ft_itoa(int n)
 	size_t	pos;
 	size_t	digits;
 
-	digits = count_digits(n);
+	digits = number_len(n);
 	result = ft_calloc(digits + 1, sizeof(char));
 	if (!result)
 		return (result);
 	if (n < 0)
 		result[0] = '-';
-	pos = digits;
-	while (n > 9 || n < -9)
+	else if (n == 0)
+		result[0] = '0';
+	pos = digits - 1;
+	while (n)
 	{
 		result[pos] = ft_abs(n % 10) + 48;
-		n /= 10;
+		n = n / 10;
 		pos--;
 	}
-	result[pos] = ft_abs(n % 10) + 48;
 	return (result);
 }
 
-static size_t	count_digits(int n)
+static size_t	number_len(int n)
 {
 	size_t	count;
 
-	count = 1;
-	while (n < -9 || n > 9)
-	{
-		n /= 10;
-		count++;
-	}
+	count = 0;
 	if (n < 0)
 		count++;
+	else if (n == 0)
+		count++;
+	while (n)
+	{
+		n = n / 10;
+		count++;
+	}
 	return (count);
 }
 
