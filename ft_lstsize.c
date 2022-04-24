@@ -1,4 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 13:36:50 by jmorillo          #+#    #+#             */
+/*   Updated: 2022/04/24 13:38:09 by jmorillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_lstsize(t_list *lst)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
+	int	len;
+
+	len = 0;
+	while (lst)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
 }
