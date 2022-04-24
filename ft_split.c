@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-static size_t	count_fields(char *str, char sep);
-static int		next_field_pos(char *str, char sep, size_t pos);
-static int		next_sep_pos(char *str, char sep, size_t pos);
+static size_t	count_fields(char const *str, char sep);
+static int		next_field_pos(char const *str, char sep, size_t pos);
+static int		next_sep_pos(char const *str, char sep, size_t pos);
 static char		**free_fields(char **strings);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	size_t	field_count;
-	int		i;
+	size_t	i;
 	int		field_pos;
 	int		sep_pos;
 
@@ -38,13 +38,13 @@ char	**ft_split(char const *s, char c)
 		result[i] = ft_calloc(sep_pos - field_pos + 1, sizeof(char));
 		if (!result[i])
 			return (free_fields(result));
-		ft_memcpy(result[i], s[field_pos], sep_pos - field_pos);
+		ft_memcpy(result[i], &s[field_pos], sep_pos - field_pos);
 		i++;
 	}
 	return (result);
 }
 
-static size_t	count_fields(char *str, char sep)
+static size_t	count_fields(char const *str, char sep)
 {
 	size_t			count;
 	unsigned short	is_sep;
@@ -65,7 +65,7 @@ static size_t	count_fields(char *str, char sep)
 	return (count);
 }
 
-static int	next_field_pos(char *str, char sep, size_t pos)
+static int	next_field_pos(char const *str, char sep, size_t pos)
 {
 	while (str[pos] && str[pos] == sep)
 		pos++;
@@ -75,7 +75,7 @@ static int	next_field_pos(char *str, char sep, size_t pos)
 		return (-1);
 }
 
-static int	next_sep_pos(char *str, char sep, size_t pos)
+static int	next_sep_pos(char const *str, char sep, size_t pos)
 {
 	if (!str[pos])
 		return (-1);

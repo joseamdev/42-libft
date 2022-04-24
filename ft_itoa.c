@@ -13,7 +13,7 @@
 #include "libft.h"
 
 static size_t	count_digits(int n);
-static int		abs(int n);
+static int		ft_abs(int n);
 
 char	*ft_itoa(int n)
 {
@@ -30,11 +30,11 @@ char	*ft_itoa(int n)
 	pos = digits;
 	while (n > 9 || n < -9)
 	{
-		res[pos] = abs(n % 10) + 48;
+		result[pos] = ft_abs(n % 10) + 48;
 		n /= 10;
 		pos--;
 	}
-	res[pos] = abs(n % 10) + 48;
+	result[pos] = ft_abs(n % 10) + 48;
 	return (result);
 }
 
@@ -53,7 +53,7 @@ static size_t	count_digits(int n)
 	return (count);
 }
 
-static int	abs(int n)
+static int	ft_abs(int n)
 {
 	if (n < 0)
 		n = -n;

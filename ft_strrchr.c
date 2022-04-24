@@ -16,8 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
 
-	last = s + ft_strlen(s);
+	last = (char *)s + ft_strlen(s);
 	while (s <= last && *last != c)
 		last--;
-	return (s * (*last == c));
+	if (*last == c)
+		return ((char *)s);
+	else
+		return (0);
 }

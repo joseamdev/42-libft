@@ -12,6 +12,30 @@
 
 #include "libft.h"
 
+static int	is_substr(const char *str, const char *substr, size_t len);
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
+	size_t	haystack_size;
+	size_t	needle_size;
+
+	if (!needle)
+		return ((char *)haystack);
+	haystack_size = ft_strlen(haystack);
+	needle_size = ft_strlen(needle);
+	if (needle_size > haystack_size || needle_size > len)
+		return (0);
+	i = 0;
+	while (haystack[i] && i < len)
+	{
+		if (is_substr(haystack, needle, len))
+			return ((char *)&haystack[i]);
+		i++;
+	}
+	return (0);
+}
+
 static int	is_substr(const char *str, const char *substr, size_t len)
 {
 	size_t	pos;
@@ -22,29 +46,6 @@ static int	is_substr(const char *str, const char *substr, size_t len)
 		if (!substr[pos + 1])
 			return (1);
 		pos++;
-	}
-	return (0);
-}
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	size_t	i;
-	size_t	pos;
-	size_t	haystack_size;
-	size_t	needle_size;
-
-	if (!needle)
-		return (haystack);
-	haystack_size = ft_strlen(haystack);
-	needle_size = ft_strlen(needle);
-	if (needle_size > haystack_size || needle_size > len)
-		return (0);
-	i = 0;
-	while (haystack[i] && i < len)
-	{
-		if (is_substr(haystack, needle, len))
-			return (&haystack[i]);
-		i++;
 	}
 	return (0);
 }
