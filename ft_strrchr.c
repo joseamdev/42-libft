@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:12:01 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 20:13:44 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:57:07 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
 
-	if (!s)
-		return (NULL);
 	last = (char *)s + ft_strlen(s);
 	while (last >= s)
 	{

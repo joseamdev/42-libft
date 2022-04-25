@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:49:10 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 17:11:00 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:25:41 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	haystack_size;
 	size_t	needle_size;
 
-	if (!needle)
+	if (!*needle)
 		return ((char *)haystack);
 	haystack_size = ft_strlen(haystack);
 	needle_size = ft_strlen(needle);

@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 20:06:18 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 17:10:48 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:46:15 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	**ft_split(char const *s, char c)
 	int		field_pos;
 	int		sep_pos;
 
+	if (!s)
+		return (NULL);
 	field_count = count_fields(s, c);
 	result = ft_calloc(field_count + 1, sizeof(char *));
 	if (!result)

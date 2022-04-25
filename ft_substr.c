@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:50:01 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 20:17:44 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:46:56 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ptr;
 	size_t	s_len;
 
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 		start = s_len;

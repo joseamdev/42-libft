@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:50:06 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 12:57:37 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:43:58 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 	unsigned int	i;
 
-	result = ft_calloc(ft_strlen(s), sizeof(char));
+	if (!s || !f)
+		return (NULL);
+	result = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!result)
 		return (result);
 	i = 0;

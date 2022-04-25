@@ -41,7 +41,7 @@ $(NAME): ${OBJ}
 	${GCC} ${CFLAGS} -c ${SRC}
 	ar rcs ${NAME} ${OBJ} libft.h
 
-bonus: ${BOBJS}
+bonus: ${BONUS_OBJ}
 	${GCC} ${CFLAGS} -c ${BONUS_SRC}
 	ar rcs ${NAME} ${BONUS_OBJ} libft.h
 

@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 12:45:08 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 19:55:13 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:20:37 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dst || !src)
+	if (!dst && !src && n)
 		return (NULL);
 	i = 0;
 	while (i < n)

@@ -6,7 +6,7 @@
 /*   By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 12:52:21 by jmorillo          #+#    #+#             */
-/*   Updated: 2022/04/24 19:55:29 by jmorillo         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:54:46 by jmorillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	void	*result;
 
-	if (!dst || !src)
-		return (NULL);
 	result = dst;
 	if (src < dst && src + len > dst)
 	{
